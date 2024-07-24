@@ -1,0 +1,4 @@
+shodan_api: '<put shodan API here>'
+shodan_query: <common shodan query>
+data_retention: 90 #days
+scan_interval: 30 #days

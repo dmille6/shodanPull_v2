@@ -1,0 +1,11 @@
+2024-07-23 14:52:44,978 - shodanPull_v2 Logger - INFO - --===========================================--
+2024-07-23 14:53:41,688 - shodanPull_v2 Logger - INFO - --===========================================--
+2024-07-23 14:53:41,957 - shodanPull_v2 Logger - INFO -    [+]: Querying Shodan: after:2024-07-20 country:US state:LA
+2024-07-23 14:53:46,669 - shodanPull_v2 Logger - INFO -    [+]: Results found: 1
+2024-07-23 14:53:46,671 - shodanPull_v2 Logger - INFO -      [-  No Vulnerability -]: : 199.19.233.115 not added to data store
+2024-07-23 14:53:46,672 - shodanPull_v2 Logger - INFO - --===========================================--
+2024-07-23 14:54:41,166 - shodanPull_v2 Logger - INFO - --===========================================--
+2024-07-23 14:54:42,010 - shodanPull_v2 Logger - INFO -    [+]: Querying Shodan: after:2024-07-20 country:US state:LA
+2024-07-23 14:54:43,146 - shodanPull_v2 Logger - INFO -    [+]: Results found: 1
+2024-07-23 14:54:43,147 - shodanPull_v2 Logger - INFO -      [-  No Vulnerability -]: : 199.19.233.115 not added to data store
+2024-07-23 14:54:43,148 - shodanPull_v2 Logger - INFO - --===========================================--
