@@ -81,27 +81,30 @@ def show(config, dataStore):
     file_str=file_str.replace(" ","_")
 
     for record in data:
-
         dateDiff = datetime.datetime.now() - dataStore.convertStrTimeStamptoDateTime(data[record]['last_seen'])
         vulnCount = len(data[record]['vuln_list'])
 
-        if dateDiff.days < 15:
+        if dateDiff.days < config['data_retention']:
             location_str=data[record]['location']['city']+","+data[record]['location']['region_code']
 
             row = [data[record]['ip_str'], data[record]['first_seen'],
                    data[record]['last_seen'], dateDiff, data[record]['last_scan'],
                    vulnCount, data[record]['seen_count'],location_str]
+
             tableData.append(row)
+            print (f'[+]: {row}')
             table_row_count+=1
 
     print(tabulate(tableData, headers, tablefmt="pretty"))
 
-    if table_row_count>50:
+    if table_row_count>20:
         print (f'   [+]: large amount of records, saving output to table.txt')
         print (f'   [+]: records saved: {table_row_count}')
         finalTable=tabulate(tableData, headers, tablefmt="pretty")
         with open(file_str, "w") as file:
             file.write(finalTable)
+
+    print (config['data_retention'])
 
 # --===============================================================--
 #                    Process Shodan Results
@@ -244,35 +247,22 @@ if __name__ == "__main__":
 
         config = load_config('config.yml')
 
-        #gather(config, dataStore, logger)
+        # ---
+        # UnComment to pull data from shodan with query in config.yml
+        # ---
+        # gather(config, dataStore, logger)
+
+        # ---
+        # UnComment to show data from shodan data file
+        # ---
         #show(config, dataStore)
 
-        # parser = argparse.ArgumentParser(description='A tool with gather, hunt, and show functionalities.')
-        #
-        # subparsers = parser.add_subparsers(dest='command', help='Sub-command help')
-        #
-        # # Gather command
-        # parser_gather = subparsers.add_parser('gather', help='Gather data')
-        # parser_gather.set_defaults(func=gather)
-        #
-        # # Hunt command
-        # parser_hunt = subparsers.add_parser('hunt', help='Hunt targets')
-        # parser_hunt.set_defaults(func=hunt)
-        #
-        # # Show command
-        # parser_show = subparsers.add_parser('show', help='Show results')
-        # parser_show.set_defaults(func=show)
-        #
-        # # Parse the arguments
-        # args = parser.parse_args()
-
-        # Execute the appropriate function based on the command
-        # if hasattr(args, 'func'):
-        #     args.func()
-        # else:
-        #     parser.print_help()
-
-        processShodanJSONFiles('./shodanLa')
+        # ---
+        # UnComment to import default json files from shodan cli download command
+        #     - put files in a folder, it will iterate through all json files in
+        #     - the folder.
+        # ---
+        # processShodanJSONFiles('./shodanLa')
 
         dataStore.saveDataStore('./shodanDataStore.json')
         logger.info(f'--===========================================--')
