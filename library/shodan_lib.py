@@ -15,6 +15,7 @@ class shodan_api_class:
     shodan_valid_key=False
     shodan_obj=''
     logger=''
+
     def __init__(self, shodan_api_key, logger):
         self.logger=logger
         init(autoreset=True)

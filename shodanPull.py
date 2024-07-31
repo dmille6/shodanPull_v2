@@ -103,7 +103,6 @@ def show(config, dataStore):
         with open(file_str, "w") as file:
             file.write(finalTable)
 
-
 # --===============================================================--
 #                    Process Shodan Results
 # --===============================================================--
@@ -185,6 +184,8 @@ def processShodanJSONFiles(folderToProcess):
 
         ProcessShodanResults(jsonFile, dataStore)
 
+
+
 # --===============================================================--
 #                            Load Config
 # --===============================================================--
@@ -243,8 +244,7 @@ if __name__ == "__main__":
 
         config = load_config('config.yml')
 
-        gather(config, dataStore, logger)
-
+        #gather(config, dataStore, logger)
         #show(config, dataStore)
 
         # parser = argparse.ArgumentParser(description='A tool with gather, hunt, and show functionalities.')
@@ -271,6 +271,8 @@ if __name__ == "__main__":
         #     args.func()
         # else:
         #     parser.print_help()
+
+        processShodanJSONFiles('./shodanLa')
 
         dataStore.saveDataStore('./shodanDataStore.json')
         logger.info(f'--===========================================--')
