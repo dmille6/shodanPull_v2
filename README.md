@@ -13,6 +13,10 @@ Prototype that pulls shodan data into a json/text database based on a query
 
 example:  #runs script every night at 2am
 
+create bash script: runPullShodanLa.sh
+> cd /data/shodanPull_v2
+> /bin/python3 /data/shodanPull_v2/shodanPull.py
+
 > crontab -e
 
 in crontab editor: Runs every 2am
