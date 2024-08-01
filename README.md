@@ -32,7 +32,7 @@ in crontab editor: Runs every 2am
 >
 > processShodanJSONFiles : import shodan cli "shodan download <arguments>" default json files.
 > 
- --- put files in an folder, point command to folder to import all
+>  --- put files in an folder, point command to folder to import all
 
 ## TODO:
 - Turn hunt, gather, show into commandline arguments
