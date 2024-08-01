@@ -36,6 +36,6 @@ in crontab editor: Runs every 2am
 
 ## TODO:
 - Turn hunt, gather, show into commandline arguments
-- Build gui
+- Build GUI
 - Prune data file, delete old data entries
 - change "processShodanJSONFiles" to "ingest"
