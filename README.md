@@ -30,7 +30,7 @@ in crontab editor: Runs every 2am
 >
 > hunt : will be used to actually do processing on data/shodan entries
 >
-> processShodanJSONFiles : import shodan cli "shodan download <arguments>" default json files.
+> ingest : import shodan cli "shodan download <arguments>" default json files.
 > 
 >  --- put files in an folder, point command to folder to import all
 
@@ -38,4 +38,3 @@ in crontab editor: Runs every 2am
 - Turn hunt, gather, show into commandline arguments
 - Build GUI
 - Prune data file, delete old data entries
-- change "processShodanJSONFiles" to "ingest"
