@@ -169,7 +169,7 @@ def read_json_file(file_path):
 
     return json_objects
 
-def processShodanJSONFiles(folderToProcess):
+def ingest(folderToProcess):
     fileWithPath=[]
 
     print (Fore.GREEN + f' [+]: folder being processed: {folderToProcess}')
@@ -262,7 +262,9 @@ if __name__ == "__main__":
         #     - put files in a folder, it will iterate through all json files in
         #     - the folder.
         # ---
-        # processShodanJSONFiles('./shodanLa')
+
+        ingest('./shodanLa')
+
 
         dataStore.saveDataStore('./shodanDataStore.json')
         logger.info(f'--===========================================--')
